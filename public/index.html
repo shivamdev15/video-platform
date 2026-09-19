@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Video Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 onclick="showHome()">▶️ Mini Video Platform</h1>
+    <button id="addBtn" onclick="showAddForm()">+ Add Video</button>
+  </header>
+
+  <main id="app">
+    <!-- Home view: grid of videos -->
+    <section id="homeView">
+      <div id="videoGrid" class="grid"></div>
+      <p id="emptyState" class="empty-state" style="display:none;">
+        No videos yet — click "+ Add Video" to add your first one.
+      </p>
+    </section>
+
+    <!-- Add video form -->
+    <section id="addView" class="hidden">
+      <h2>Add a video</h2>
+      <form id="addForm">
+        <label>YouTube URL or video ID</label>
+        <input type="text" id="addUrl" placeholder="https://www.youtube.com/watch?v=..." required />
+
+        <label>Title</label>
+        <input type="text" id="addTitle" placeholder="Video title" required />
+
+        <label>Description (optional)</label>
+        <textarea id="addDescription" placeholder="What's this video about?"></textarea>
+
+        <div class="form-actions">
+          <button type="button" class="secondary" onclick="showHome()">Cancel</button>
+          <button type="submit">Add Video</button>
+        </div>
+        <p id="addError" class="error"></p>
+      </form>
+    </section>
+
+    <!-- Video detail view -->
+    <section id="detailView" class="hidden">
+      <button class="back-btn" onclick="showHome()">← Back</button>
+      <div id="detailContent"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
