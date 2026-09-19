@@ -2,6 +2,8 @@
 
 A small YouTube-inspired app: paste a YouTube link, catalog it, and let people like and comment on it — all backed by a real database.
 
+**🔗 Live demo: [video-platform-ifxf.onrender.com](https://video-platform-ifxf.onrender.com)** (may take 30-50 seconds to load on first visit — free tier sleeps when idle. Note: the database resets on redeploys, so test data may not persist long-term.)
+
 ## What it does
 
 - **Add videos** by pasting any YouTube URL (or a raw video ID)
@@ -16,7 +18,7 @@ This is full CRUD (Create, Read, Update, Delete) on real relational data — vid
 ## Tech stack
 
 - **Backend:** Node.js + Express
-- **Database:** SQLite (via `better-sqlite3`) — a real relational database that lives in a single file, no external account or service needed
+- **Database:** SQLite (via Node's built-in `node:sqlite` module) — a real relational database that lives in a single file, no external account, service, or extra dependency needed
 - **Frontend:** Vanilla HTML/CSS/JavaScript, single-page app style (no framework)
 
 ## Running it locally
